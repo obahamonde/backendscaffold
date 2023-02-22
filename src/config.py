@@ -1,7 +1,10 @@
 """Application Settings"""
 
+from json import loads
+
 from pydantic import BaseSettings, Field, BaseConfig
 
+GOOGLE_CREDENTIALS = loads(open("credentials.json", "r", encoding="utf-8").read())
 
 class Settings(BaseSettings):
 
@@ -15,6 +18,8 @@ class Settings(BaseSettings):
     REDIS_PASSWORD: str = Field(..., env="REDIS_PASSWORD")
     REDIS_HOST: str = Field(..., env="REDIS_HOST")
     REDIS_PORT: int = Field(..., env="REDIS_PORT")
+    GOOGLE_CREDENTIALS: dict = Field(default=GOOGLE_CREDENTIALS, env="GOOGLE_CREDENTIALS")
+
 
     class Config(BaseConfig):
 
