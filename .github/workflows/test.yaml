@@ -1,0 +1,10 @@
+name: Test Secrets
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Secret
+        run: echo "${{ secrets.FIREBASE_CONFIG }}" | base64 --decode > firebase.json

@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "src"
+version = "0.1.0"
+description = ""
+authors = ["Oscar Bahamonde <107950590+obahamonde@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+boto3 = "^1.26.75"
+fastapi = "^0.92.0"
+httpx = "^0.23.3"
+prisma = "^0.8.1"
+aioredis = "^2.0.1"
+aio-pika = "^9.0.4"
+python-jose = "^3.3.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.2.1"
+pytest-asyncio = "^0.20.3"
+black = "^23.1.0"
+pylint = "^2.16.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
